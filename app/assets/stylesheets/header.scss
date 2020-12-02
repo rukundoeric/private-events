@@ -1,0 +1,40 @@
+.navbar {
+  border-bottom: 2px solid rgb(255, 115, 0);
+  
+  a {
+    text-decoration: none;
+    font-weight: 600;
+    &:hover {
+      background-color: white;
+      text-decoration: none;
+      color: rgb(255, 115, 0);
+    }
+  }
+
+  .nav-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    span {
+      color: rgba(255, 115, 0, 0.712);
+      font-weight: 700;
+      i {
+        font-weight: 800;
+        font-size: 20px;
+        color: rgb(255, 115, 0);
+      }
+    }
+  }
+
+  .profile {
+    border: 1px solid rgb(230, 230, 230);
+    border-radius: 20px;
+
+  }
+}

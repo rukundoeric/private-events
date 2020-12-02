@@ -1,0 +1,17 @@
+<div class="auth-page-container d-flex justify-content-center align-items-center">
+  <div class="form-content p-5">
+    <h4 class="text-center">Sign in</h4>
+    <%= form_with url: sessions_path, local: true do |form| %>
+
+    <div class="field">
+      <%= form.label :name %>
+      <%= form.text_field :name, class: 'pl-3' %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit 'Sign In', class: 'px-5 py-2 mt-3' %>
+    </div>
+    <% end %>
+    <%= link_to "SIGN UP", sign_up_path, class: 'login-link pt-4' %>
+  </div>
+</div>
