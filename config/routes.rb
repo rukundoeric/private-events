@@ -7,4 +7,6 @@ Rails.application.routes.draw do
 
   resources :users
   resources :sessions, only: %i[new create destroy]
+  resources :events
+  resources :invites, only: %i[create destroy update]
 end

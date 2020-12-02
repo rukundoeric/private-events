@@ -1,6 +1,8 @@
 class EventsController < ApplicationController
   before_action :require_login, except: [:index]
 
+  include EventsHelper
+
   def index
     @upcoming_events = Event.upcoming
     @prev_events = Event.past
