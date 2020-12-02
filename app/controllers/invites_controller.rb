@@ -2,7 +2,7 @@ class InvitesController < ApplicationController
   before_action :require_login, except: %i[index]
 
   def index
-    @user = User.all
+    @users = User.all
   end
 
   def create

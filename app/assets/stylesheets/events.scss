@@ -9,6 +9,15 @@
   background-color: white;
 }
 
+.upcoming_events,
+.prev_events {
+  h4 {
+    font-size: 15px;
+    text-transform: uppercase;
+    color: rgb(88, 88, 88);
+  }
+}
+
 .event-form-content {
   width: 400px;
   background-color: white;
@@ -20,6 +29,7 @@
 
   .field {
     margin-top: 15px;
+
     input {
       width: 100%;
       height: 40px;
@@ -57,5 +67,73 @@
 
   .login-link {
     float: left;
+  }
+}
+
+.event-item {
+  box-shadow: 0 0 5px rgb(179, 179, 179);
+  background-color: white;
+
+  .title-link {
+    font-size: 20px;
+    color: rgb(90, 90, 90);
+    text-decoration: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+
+    &:hover {
+      text-decoration: none;
+      background-color: transparent;
+    }
+  }
+
+  .body {
+    color: rgb(131, 131, 131);
+    font-size: 13px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+  }
+
+  span {
+    font-size: 15px;
+    font-weight: 700;
+    color: rgb(133, 133, 133);
+
+    i {
+      color: rgb(255, 115, 0);
+    }
+  }
+}
+
+.event-info {
+  .title {
+    h4 {
+      font-size: 20px;
+    }
+  }
+
+  .body {
+    font-size: 15px;
+  }
+}
+
+.event-into-op {
+  border: 3px solid rgb(247, 241, 241);
+  min-height: 400px;
+
+  span {
+    font-size: 15px;
+    font-weight: 700;
+    color: rgb(133, 133, 133);
+
+    i {
+      color: rgb(255, 115, 0);
+    }
   }
 }

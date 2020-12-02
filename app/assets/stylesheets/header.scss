@@ -1,10 +1,11 @@
 .navbar {
   border-bottom: 2px solid rgb(255, 115, 0);
   background-color: white;
-  
+
   a {
     text-decoration: none;
     font-weight: 600;
+
     &:hover {
       background-color: white;
       text-decoration: none;
@@ -22,9 +23,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
     span {
       color: rgba(255, 115, 0, 0.712);
       font-weight: 700;
+
       i {
         font-weight: 800;
         font-size: 20px;
@@ -32,12 +35,11 @@
       }
     }
   }
+}
 
-  .profile {
-    border: 1px solid rgb(230, 230, 230);
-    border-radius: 20px;
-
-  }
+.profile {
+  border: 1px solid rgb(230, 230, 230);
+  border-radius: 20px;
 }
 
 .taskbar {
@@ -52,6 +54,7 @@
       color: rgb(255, 115, 0);
     }
   }
+
   span {
     color: rgb(139, 139, 139);
     font-size: 12px;

@@ -1,0 +1,35 @@
+<div class="page-content">
+  <%= render 'layouts/header' %>
+  <%= render 'layouts/taskbar'%>
+  <div class="content pt-2">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="event-info mt-5">
+            <div class="d-flex">
+              <div class="profile d-flex px-3 py-1">
+                <span class="mr-2"><i class="icon-user"></i></span>
+                <span><%= @event.creator['name']%></span>
+              </div>
+            </div>
+            <div class="title mt-2">
+              <h4><%= @event.name%></h4>
+            </div>
+            <div class="body">
+              <p><%= @event.description%></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="event-into-op mt-3 p-4">
+            <div class="d-flex flex-column">
+              <span><i class="icon-location-pin pr-2"></i><%= @event.location%></span>
+              <span><i class="icon-calender pr-2"></i><%= @event.date%></span>
+            </div>
+            <%= link_to "INVITE", some_path %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
