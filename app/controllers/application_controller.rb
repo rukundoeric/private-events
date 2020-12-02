@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   def require_login
-    redirect_to sign_in_path, notice: 'LOGGED OUT SUCCESSFULLY!' unless current_user
+    redirect_to sign_in_path unless current_user
   end
 
   def current_user

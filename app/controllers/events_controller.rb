@@ -21,7 +21,7 @@ class EventsController < ApplicationController
 
     if @event.save
       flash[:success] = "EVENT '#{@event.name.upcase}' CREATE SUCCESSFULLY!"
-      redirect_to @event
+      redirect_to users_path(event_id: @event.id)
     else
       flash[:error] = 'SOMETHING WENT WRONG!'
       render 'new'

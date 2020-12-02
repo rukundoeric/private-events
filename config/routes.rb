@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'users#index'
+  root 'events#index'
 
   get 'sign_up' => 'users#new', as: 'sign_up'
   get 'sign_in' => 'sessions#new', as: 'sign_in'
@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   resources :users
   resources :sessions, only: %i[new create destroy]
   resources :events
-  resources :invites, only: %i[create destroy update]
+  resources :invites, only: %i[index create destroy update]
 end

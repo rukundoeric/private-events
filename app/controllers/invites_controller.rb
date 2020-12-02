@@ -1,5 +1,9 @@
 class InvitesController < ApplicationController
-  before_action :require_login
+  before_action :require_login, except: %i[index]
+
+  def index
+    @user = User.all
+  end
 
   def create
     user_id = params[:user_id]
