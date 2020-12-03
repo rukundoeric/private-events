@@ -198,13 +198,15 @@
 .icon-social-stumbleupon,
 .icon-social-youtube,
 .icon-social-dropbox {
-  font-family: 'simple-line-icons', sans-serif;
+  /* stylelint-disable */
+  font-family: 'simple-line-icons';
   speak: none;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
   text-transform: none;
   line-height: 1;
+  /* stylelint-enable */
 
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
