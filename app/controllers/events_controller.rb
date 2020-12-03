@@ -23,8 +23,11 @@ class EventsController < ApplicationController
     @event = current_user.events.build(event_params)
 
     if @event.save
+      @invite = Invite.new(event_id: @event.id, user_id: current_user.id)
+      @invite.invited!
+      @invite.accepted!
       flash[:success] = "EVENT '#{@event.name.upcase}' CREATE SUCCESSFULLY!"
-      redirect_to invites_path(event_id: @event.id)
+      redirect_to event_path(@event)
     else
       flash[:error] = 'SOMETHING WENT WRONG!'
       render 'new'
