@@ -1,5 +1,8 @@
 <div class="page-content">
   <%= render 'layouts/header' %>
+  <% if notice || alert %>
+  <%= render 'layouts/taskbar', origin: 'SIGN UP' %>
+  <% end %>
   <%- if @upcoming_events %>
   <div class="container upcoming_events pt-3">
     <h4>UPCOMING EVENTS</h4>
