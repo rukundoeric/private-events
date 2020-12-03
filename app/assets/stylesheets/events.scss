@@ -119,8 +119,11 @@
   }
 
   .body {
-    font-size: 15px;
-    line-height: 30px;
+    p {
+      font-size: 15px;
+      color: #8b8b8b;
+      line-height: 25px;
+    }
   }
 }
 

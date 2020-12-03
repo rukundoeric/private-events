@@ -1,3 +1,42 @@
 // Place all the styles related to the invites controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.button {
+  background-color: rgb(255, 115, 0);
+  color: white;
+  padding: 8px 15px;
+  border: 0;
+  text-transform: uppercase;
+}
+
+.button.cancel {
+  background-color: rgb(129, 129, 129);
+}
+
+.invite-list-content {
+  .invite-item {
+    border: 1px solid rgb(230, 230, 230);
+    box-sizing: border-box;
+    .profile-img {
+       width: 45px;
+       height: 45px;
+       border-radius: 50%;
+       border: 1px solid rgb(230, 230, 230);
+    }
+
+    small {
+      font-weight: 700;
+      color: rgb(155, 155, 155);
+    }
+
+    span {
+    font-size: 15px;
+    font-weight: 700;
+    color: rgb(133, 133, 133);
+
+    i {
+      color: rgb(255, 115, 0);
+    }
+  }
+  }
+}

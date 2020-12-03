@@ -1,29 +1,39 @@
 <div class="page-content">
   <%= render 'layouts/header' %>
-  <%= render 'layouts/taskbar'%>
+  <%= render 'layouts/taskbar', origin: 'ROOT' %>
   <div class="content pt-4">
     <div class="container">
-      <h1>Users</h1>
+      <h4>INVITE USERS</h4>
 
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th colspan="3"></th>
-          </tr>
-        </thead>
 
-        <tbody>
-          <% @users.each do |user| %>
-          <tr>
-            <td><%= user.name %></td>
-            <td><%= link_to 'Show', user %></td>
-            <td><%= link_to 'Edit', edit_user_path(user) %></td>
-            <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          </tr>
-          <% end %>
-        </tbody>
-      </table>
+      <div class="row invite-list-content">
+
+        <% @users.reject { |user| user == Event.find(params[:event_id]).creator }.each do |user| %>
+        <% invite = Invite.find_by(event_id: params[:event_id], user_id: user.id) %>
+        <div class="col-lg-6 invite-item d-flex justify-content-between px-3 py-3">
+          <div class="d-flex">
+            <span class="d-flex justify-content-center align-items-center profile-img"><i class="icon-user"></i></span>
+            <div class="d-flex flex-column ml-2">
+              <span><%= user.name %></span>
+
+              <% unless invite.nil? || invite.status.nil? %>
+                <small class="status green"><%= invite.status %></small>
+              <% else %>
+                <small class="status">---</small>
+              <% end %>
+            </div>
+          </div>
+          <div class="d-flex">
+            <%- if invite.nil? %>
+              <%= button_to "Invite", invites_path(event_id: params[:event_id], user_id: user.id), class: "button is-primary is-small" %>
+            <% else %>
+              <%= button_to "Cancel Invitation", invite_path(id: invite.id, event_id: params[:event_id]), method: :delete, class: "button cancel is-primary is-small" %>  
+            <% end %>
+          </div>
+        </div>
+        <% end %>
+
+      </div>
     </div>
   </div>
 </div>
