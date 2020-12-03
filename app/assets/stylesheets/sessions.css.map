@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAGA,AAAA,CAAC,CAAC;EACA,eAAe,EAAE,IAAI;EACrB,WAAW,EAAE,GAAG;CAOjB;;AATD,AAIE,CAJD,AAIE,MAAM,CAAC;EACN,gBAAgB,EAAE,KAAK;EACvB,eAAe,EAAE,IAAI;EACrB,KAAK,EAAE,OAAgB;CACxB",
+    "sources": [
+        "sessions.scss"
+    ],
+    "names": [],
+    "file": "sessions.css"
+}

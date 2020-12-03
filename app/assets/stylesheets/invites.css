@@ -1,0 +1,46 @@
+.button {
+  background-color: #ff7300;
+  color: white;
+  padding: 8px 15px;
+  border: 0;
+  text-transform: uppercase;
+}
+
+.button.cancel {
+  background-color: #818181;
+}
+
+.invites h4 {
+  font-size: 20px;
+  text-transform: uppercase;
+  color: #585858;
+}
+
+.invite-item {
+  border: 1px solid #e6e6e6;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.invite-item .profile-img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 1px solid #e6e6e6;
+}
+
+.invite-item small {
+  font-weight: 700;
+  color: #9b9b9b;
+}
+
+.invite-item span {
+  font-size: 15px;
+  font-weight: 700;
+  color: #858585;
+}
+
+.invite-item span i {
+  color: #ff7300;
+}
+/*# sourceMappingURL=invites.css.map */

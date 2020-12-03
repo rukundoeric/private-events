@@ -1,0 +1,18 @@
+.taskbar a {
+  font-size: 12px;
+  font-weight: 700;
+  color: #8b8b8b;
+}
+
+.taskbar a:hover {
+  text-decoration: none;
+  background-color: transparent;
+  color: #ff7300;
+}
+
+.taskbar span {
+  color: #8b8b8b;
+  font-size: 12px;
+  font-weight: 700;
+}
+/*# sourceMappingURL=taskbar.css.map */

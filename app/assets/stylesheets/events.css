@@ -1,0 +1,171 @@
+.page-content {
+  background-color: #f7f1f1;
+}
+
+.content {
+  background-color: white;
+}
+
+.upcoming_events h4,
+.prev_events h4 {
+  font-size: 15px;
+  text-transform: uppercase;
+  color: #585858;
+}
+
+.profile a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #8b8b8b;
+}
+
+.profile a:hover {
+  background-color: white;
+  text-decoration: none;
+  color: #ff7300;
+}
+
+.event-form-content {
+  width: 400px;
+  background-color: white;
+}
+
+.event-form-content h4 {
+  text-transform: uppercase;
+  color: #ff7300;
+}
+
+.event-form-content .field {
+  margin-top: 15px;
+}
+
+.event-form-content .field input {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #c7c7c7;
+}
+
+.event-form-content .field textarea {
+  width: 100%;
+  height: 100px;
+  border: 1px solid #c7c7c7;
+}
+
+.event-form-content .field .date {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.event-form-content .field .date select {
+  border: 1px solid #c7c7c7;
+  border-radius: 0;
+  padding: 5px 10px;
+  outline: none;
+}
+
+.event-form-content .actions input {
+  background-color: #ff7300;
+  border: 0;
+  color: white;
+  text-transform: uppercase;
+  float: right;
+}
+
+.event-form-content .login-link {
+  float: left;
+}
+
+.event-item {
+  -webkit-box-shadow: 0 0 5px #b3b3b3;
+          box-shadow: 0 0 5px #b3b3b3;
+  background-color: white;
+}
+
+.event-item .title-link {
+  font-size: 20px;
+  color: #5a5a5a;
+  text-decoration: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.event-item .title-link:hover {
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.event-item .body {
+  color: #838383;
+  font-size: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+}
+
+.event-item span {
+  font-size: 15px;
+  font-weight: 700;
+  color: #858585;
+}
+
+.event-item span i {
+  color: #ff7300;
+}
+
+.event-info .title h4 {
+  font-size: 20px;
+}
+
+.event-info .body p {
+  font-size: 15px;
+  color: #8b8b8b;
+  line-height: 25px;
+}
+
+.event-into-op {
+  border: 3px solid #f7f1f1;
+  min-height: 400px;
+}
+
+.event-into-op span {
+  font-size: 15px;
+  font-weight: 700;
+  color: #858585;
+}
+
+.event-into-op span i {
+  color: #ff7300;
+}
+
+.event-invitees {
+  border: 3px solid #f7f1f1;
+}
+
+.event-invitees span {
+  font-size: 15px;
+  font-weight: 700;
+  color: #858585;
+}
+
+.event-invitees span i {
+  color: #ff7300;
+}
+
+.invite-link {
+  background-color: #ff7300;
+  color: white !important;
+}
+
+.invite-link:hover {
+  background-color: rgba(255, 115, 0, 0.89);
+  text-decoration: none;
+  color: white;
+}
+/*# sourceMappingURL=events.css.map */
