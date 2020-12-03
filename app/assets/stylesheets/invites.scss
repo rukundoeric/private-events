@@ -13,23 +13,31 @@
   background-color: rgb(129, 129, 129);
 }
 
-.invite-list-content {
-  .invite-item {
+.invites {
+  h4 {
+    font-size: 20px;
+    text-transform: uppercase;
+    color: rgb(88, 88, 88);
+  }
+}
+
+.invite-item {
+  border: 1px solid rgb(230, 230, 230);
+  box-sizing: border-box;
+
+  .profile-img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
     border: 1px solid rgb(230, 230, 230);
-    box-sizing: border-box;
-    .profile-img {
-       width: 45px;
-       height: 45px;
-       border-radius: 50%;
-       border: 1px solid rgb(230, 230, 230);
-    }
+  }
 
-    small {
-      font-weight: 700;
-      color: rgb(155, 155, 155);
-    }
+  small {
+    font-weight: 700;
+    color: rgb(155, 155, 155);
+  }
 
-    span {
+  span {
     font-size: 15px;
     font-weight: 700;
     color: rgb(133, 133, 133);
@@ -37,6 +45,5 @@
     i {
       color: rgb(255, 115, 0);
     }
-  }
   }
 }

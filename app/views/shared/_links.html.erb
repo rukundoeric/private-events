@@ -8,5 +8,12 @@
 <% elsif controller_name == 'invites' %>
   <%= link_to "HOME", root_path %>
   <span class="px-2">➜</span>
-  <%= link_to "INVITE", users_path %> 
+  <%= link_to "INVITE", invites_path %> 
+
+  <% elsif controller_name == 'users' %>
+  <%= link_to "HOME", root_path %>
+  <span class="px-2">➜</span>
+  <%= link_to "USERS", users_path %>
+  <span class="px-2">➜</span> 
+  <%= link_to origin, user_path(@user) %>
 <% end %>

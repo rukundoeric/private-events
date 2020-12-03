@@ -1,9 +1,62 @@
-<p id="notice"><%= notice %></p>
+<div class="page-content">
+  <%= render 'layouts/header' %>
+  <%= render 'layouts/taskbar', origin: @user.name.upcase %>
+  <div class="container mb-4">
+    <div class="col-lg-6 invite-item d-flex justify-content-between px-3 py-3">
+      <div class="d-flex">
+        <span class="d-flex justify-content-center align-items-center profile-img"><i class="icon-user"></i></span>
+        <div class="d-flex flex-column ml-2">
+          <span><%= @user.name %></span>
+          <small class="status">@<%= @user.name.downcase %></small>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
+  <div class="content">
+    <div class="container show-user-profile pt-3">
+      <h4>HOSTED EVENTS</h4>
+      <div class="row post-list p-3">
+        <%- if @user.events.any? %>
+        <% @user.events.upcoming.each do |event| %>
+        <article class="col-xl-4 my-3">
+          <div class="event-item p-3">
+            <%= link_to  event.name, event_path(event), class: 'title-link' %>
+            <p class="body pt-2"><%= event.description %></p>
+            <div class="d-flex flex-column">
+              <span><i class="icon-location-pin pr-2"></i><%= event.location%></span>
+              <span><i class="icon-calender pr-2"></i><%= event.date%></span>
+            </div>
+          </div>
+        </article>
+        <% end %>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+        <% else %>
+        <span>NONE</span>
+        <% end %>
+      </div>
+    </div>
+    <div class="container show-user-profile pt-3">
+      <h4>ATTENDED EVENTS</h4>
+      <div class="row post-list p-3">
+        <%- if @user.attended_events.any? %>
+        <% @user.attended_events.each do |event| %>
+        <article class="col-xl-4 my-3">
+          <div class="event-item p-3">
+            <%= link_to  event.name, event_path(event), class: 'title-link' %>
+            <p class="body pt-2"><%= event.description %></p>
+            <div class="d-flex flex-column">
+              <span><i class="icon-location-pin pr-2"></i><%= event.location%></span>
+              <span><i class="icon-calender pr-2"></i><%= event.date%></span>
+            </div>
+          </div>
+        </article>
+        <% end %>
+
+        <% else %>
+        <span>NONE</span>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

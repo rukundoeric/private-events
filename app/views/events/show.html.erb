@@ -9,7 +9,7 @@
             <div class="d-flex">
               <div class="profile d-flex px-3 py-1">
                 <span class="mr-2"><i class="icon-user"></i></span>
-                <span><%= @event.creator['name']%></span>
+                <%= link_to @event.creator['name'], user_path(@event.creator) %>
               </div>
             </div>
             <div class="title mt-2">
@@ -28,7 +28,7 @@
                 <% User.find(@event.invites.invited.map { |invite| invite.user_id }).each do |user| %>
                 <div class="profile d-flex px-3 py-1 mx-2">
                   <span class="mr-2"><i class="icon-user"></i></span>
-                  <span><%= user.name%></span>
+                  <%= link_to user.name, user_path(user) %>
                 </div>
                 <% end %>
                 <% else %>
@@ -43,7 +43,7 @@
                 <% User.find(@event.invites.accepted.map { |invite| invite.user_id }).each do |user| %>
                 <div class="profile d-flex px-3 py-1 mx-2">
                   <span class="mr-2"><i class="icon-user"></i></span>
-                  <span><%= user.name%></span>
+                  <%= link_to user.name, user_path(user) %>
                 </div>
                 <% end %>
                 <% else %>

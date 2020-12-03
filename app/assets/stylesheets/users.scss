@@ -33,6 +33,7 @@ input {
 
     .field {
       margin-top: 15px;
+
       input {
         width: 100%;
         height: 40px;
@@ -53,5 +54,13 @@ input {
     .login-link {
       float: left;
     }
+  }
+}
+
+.show-user-profile {
+  h4 {
+    text-transform: uppercase;
+    color: rgb(255, 115, 0);
+    font-size: 20px;
   }
 }

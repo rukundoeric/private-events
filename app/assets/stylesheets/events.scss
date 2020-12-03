@@ -18,6 +18,20 @@
   }
 }
 
+.profile {
+   a {
+    text-decoration: none;
+    font-weight: 600;
+    color: rgb(139, 139, 139);
+
+    &:hover {
+      background-color: white;
+      text-decoration: none;
+      color: rgb(255, 115, 0);
+    }
+  }
+}
+
 .event-form-content {
   width: 400px;
   background-color: white;
