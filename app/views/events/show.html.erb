@@ -1,0 +1,84 @@
+<div class="page-content">
+  <%= render 'layouts/header' %>
+  <%= render 'layouts/taskbar', origin: 'EVENT'%>
+  <div class="content pt-2">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="event-info mt-5">
+            <div class="d-flex">
+              <div class="profile d-flex px-3 py-1">
+                <span class="mr-2"><i class="icon-user"></i></span>
+                <%= link_to @event.creator['name'], user_path(@event.creator) %>
+              </div>
+            </div>
+            <div class="title mt-2">
+              <h4><%= @event.name%></h4>
+            </div>
+            <div class="body mt-2">
+              <p><%= @event.description%></p>
+            </div>
+          </div>
+
+          <div class="event-invitees p-4">
+            <div class="mt-1">
+              <span><i class="icon-people pr-2"></i>Invitees</span><br>
+              <div class="d-flex flex-wrap mt-2">
+                <% if @invitees.any? %>
+                <% @invitees.each do |user| %>
+                <div class="profile d-flex px-3 py-1 mx-2">
+                  <span class="mr-2"><i class="icon-user"></i></span>
+                  <%= link_to user.name, user_path(user) %>
+                </div>
+                <% end %>
+                <% else %>
+                <span class="mt-1">NONE</span>
+                <% end %>
+              </div>
+            </div>
+            <div class="mt-3">
+              <span><i class="icon-people pr-2"></i>Attendees</span><br>
+              <div class="d-flex flex-wrap mt-2">
+                <% if @attendies.any? %>
+                <% @attendies.each do |user| %>
+                <div class="profile d-flex px-3 py-1 mx-2">
+                  <span class="mr-2"><i class="icon-user"></i></span>
+                  <%= link_to user.name, user_path(user) %>
+                </div>
+                <% end %>
+                <% else %>
+                <span class="mt-1">NONE</span>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="event-into-op mt-3 p-4">
+            <div class="d-flex flex-column">
+              <span><i class="icon-location-pin pr-2"></i><%= @event.location%></span>
+              <span><i class="icon-calender pr-2"></i><%= @event.date%></span>
+            </div>
+            <%- if current_user == @event.creator %>
+            <div class="d-flex justify-content-center mt-4">
+              <%= link_to "INVITE PEOPLE", invites_path(event_id: @event.id), class: 'text-center invite-link px-5 py-2' %>
+            </div>
+            <% else %>
+
+            <%- if @is_attendy %>
+            <div class="d-flex justify-content-center mt-4">
+              <%= button_to "WITHDRAW", invite_path(event_id: @event.id), method: :patch, class: 'text-center button cancel px-5 py-2' %>
+            </div>
+            <% else %>
+            <div class="d-flex justify-content-center mt-4">
+              <%= button_to "JOIN EVENT", invite_path(event_id: @event.id), method: :patch, class: 'text-center button px-5 py-2' %>
+            </div>
+            <% end %>
+
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

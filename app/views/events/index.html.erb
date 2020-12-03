@@ -1,0 +1,47 @@
+<div class="page-content">
+  <%= render 'layouts/header' %>
+  <% if notice || alert %>
+  <%= render 'layouts/taskbar', origin: 'SIGN UP' %>
+  <% end %>
+  <%- if @upcoming_events %>
+  <div class="container upcoming_events pt-3">
+    <h4>UPCOMING EVENTS</h4>
+    <div class="row post-list p-3">
+      <% @upcoming_events.each do |event| %>
+      <article class="col-xl-4 my-3">
+        <div class="event-item p-3">
+          <%= link_to  event.name, event_path(event), class: 'title-link' %>
+          <p class="body pt-2"><%= event.description %></p>
+          <div class="d-flex flex-column">
+            <span><i class="icon-location-pin pr-2"></i><%= event.location%></span>
+            <span><i class="icon-calender pr-2"></i><%= event.date%></span>
+          </div>
+        </div>
+      </article>
+      <% end %>
+    </div>
+  </div>
+  <% end %>
+
+  <%- if @prev_events %>
+  <div class="content">
+    <div class="container prev_events pt-3">
+      <h4>PAST EVENTS</h4>
+      <div class="row post-list p-3">
+        <% @prev_events.each do |event| %>
+        <article class="col-xl-4 my-3">
+          <div class="event-item p-3">
+            <%= link_to  event.name, event_path(event), class: 'title-link' %>
+            <p class="body pt-2"><%= event.description %></p>
+            <div class="d-flex flex-column">
+              <span><i class="icon-location-pin pr-2"></i><%= event.location%></span>
+              <span><i class="icon-calender pr-2"></i><%= event.date%></span>
+            </div>
+          </div>
+        </article>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>

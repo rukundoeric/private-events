@@ -1,0 +1,11 @@
+<% if notice || alert %>
+  <%= render 'layouts/taskbar', origin: 'SIGN UP' %>  
+<% end %>
+
+<div class="auth-page-container d-flex justify-content-center align-items-center">
+  <div class="form-content p-5">
+    <h4 class="text-center">Sign up</h4>
+    <%= render 'form', user: @user, actionText: 'Sign Up' %>
+    <%= link_to "Log in", sign_in_path, class: 'login-link pt-4' %>
+  </div>
+</div>

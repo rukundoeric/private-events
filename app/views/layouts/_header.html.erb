@@ -1,0 +1,36 @@
+<nav class="navbar py-3">
+  <div class="container d-flex justify-content-between">
+    <div class="left">
+      <div class="logo">
+        <span><i>P</i>-EVENTS</span>
+      </div>
+    </div>
+    <div class="rigth d-flex">
+      <div class="nav-item mx-2">
+        <%= link_to "HOME", root_path %>
+      </div>
+      <div class="nav-item mx-2">
+        <%= link_to "CREATE EVENT", new_event_path %>
+      </div>
+
+      <%- if current_user %>
+      <div class="nav-item mx-2">
+        <%= link_to "SIGN OUT", sign_out_path %>
+      </div>
+      <div class="nav-item">
+        <div class="profile d-flex px-3 py-1">
+          <span class="mr-2"><i class="icon-user"></i></span>
+          <%= link_to current_user['name'], user_path(current_user) %>
+        </div>
+      </div>
+      <% else %>
+      <div class="nav-item mx-2">
+        <%= link_to "SIGN IN", sign_in_path %>
+      </div>
+      <div class="nav-item mx-2">
+        <%= link_to "SIGN UP", sign_up_path %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</nav>

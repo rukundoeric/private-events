@@ -1,0 +1,19 @@
+.taskbar {
+  a {
+    font-size: 12px;
+    font-weight: 700;
+    color: rgb(139, 139, 139);
+
+    &:hover {
+      text-decoration: none;
+      background-color: transparent;
+      color: rgb(255, 115, 0);
+    }
+  }
+
+  span {
+    color: rgb(139, 139, 139);
+    font-size: 12px;
+    font-weight: 700;
+  }
+}

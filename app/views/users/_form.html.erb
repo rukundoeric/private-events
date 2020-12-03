@@ -1,0 +1,10 @@
+<%= form_with(model: user, local: true) do |form| %>
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: 'pl-3' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit actionText, class: 'px-5 py-2 mt-3' %>
+  </div>
+<% end %>

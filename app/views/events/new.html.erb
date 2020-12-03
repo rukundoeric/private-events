@@ -1,0 +1,12 @@
+<div class="page-content">
+  <%= render 'layouts/header' %>
+  <%= render 'layouts/taskbar', origin: 'CREATE EVENT'%>
+  <div class="content pt-4">
+    <div class="container">
+      <div class="event-form-content">
+        <h4>CREATE EVENT</h4>
+        <%= render 'form', event: @event, actionText: 'CREATE EVENT' %>
+      </div>
+    </div>
+  </div>
+</div>

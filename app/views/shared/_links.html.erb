@@ -1,0 +1,19 @@
+<%- if controller_name == 'events' %>
+<div class="d-flex justify-content-center align-items-center">
+  <%= link_to 'HOME', root_path %>
+  <span class="px-2">➜</span>
+  <%= link_to origin, new_event_path %>
+</div>
+
+<% elsif controller_name == 'invites' %>
+  <%= link_to "HOME", root_path %>
+  <span class="px-2">➜</span>
+  <%= link_to "INVITE", invites_path %> 
+
+  <% elsif controller_name == 'users' %>
+  <%= link_to "HOME", root_path %>
+  <span class="px-2">➜</span>
+  <%= link_to "USERS", users_path %>
+  <span class="px-2">➜</span> 
+  <%= link_to origin, user_path(@user) %>
+<% end %>

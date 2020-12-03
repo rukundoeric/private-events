@@ -1,0 +1,38 @@
+<div class="page-content invites">
+  <%= render 'layouts/header' %>
+  <%= render 'layouts/taskbar', origin: 'ROOT' %>
+  <div class="content pt-4">
+    <div class="container">
+      <h4>INVITE USERS</h4>
+
+      <div class="row invite-list-content">
+
+        <% @users.each do |user| %>
+        <% invite = Invite.find_by(event_id: params[:event_id], user_id: user.id) %>
+        <div class="col-lg-6 invite-item d-flex justify-content-between px-3 py-3">
+          <div class="d-flex">
+            <span class="d-flex justify-content-center align-items-center profile-img"><i class="icon-user"></i></span>
+            <div class="d-flex flex-column ml-2">
+              <span><%= user.name %></span>
+
+              <% unless invite.nil? || invite.status.nil? %>
+                <small class="status green"><%= invite.status %></small>
+              <% else %>
+                <small class="status">---</small>
+              <% end %>
+            </div>
+          </div>
+          <div class="d-flex">
+            <%- if invite.nil? %>
+              <%= button_to "Invite", invites_path(event_id: params[:event_id], user_id: user.id), class: "button is-primary is-small" %>
+            <% else %>
+              <%= button_to "Cancel Invitation", invite_path(id: invite.id, event_id: params[:event_id]), method: :delete, class: "button cancel is-primary is-small" %>  
+            <% end %>
+          </div>
+        </div>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>
