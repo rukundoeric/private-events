@@ -1,10 +1,12 @@
 .navbar {
-  border-bottom: 2px solid rgb(255, 115, 0);
+  // border-bottom: 2px solid rgb(255, 115, 0);
   background-color: white;
+  box-shadow: 0px 0px 4px rgb(196, 196, 196);
 
   a {
     text-decoration: none;
     font-weight: 600;
+    color: rgb(139, 139, 139);
 
     &:hover {
       background-color: white;
@@ -40,6 +42,21 @@
 .profile {
   border: 1px solid rgb(230, 230, 230);
   border-radius: 20px;
+}
+
+.notice {
+  background-color: rgba(0, 104, 26, 0.815);
+   span {
+    color: white !important;
+  }
+}
+
+.error {
+  background-color: rgba(194, 0, 0, 0.671);
+
+  span {
+    color: white !important;
+  }
 }
 
 .taskbar {

@@ -1,6 +1,6 @@
 <div class="page-content">
   <%= render 'layouts/header' %>
-  <%= render 'layouts/taskbar'%>
+  <%= render 'layouts/taskbar', origin: 'EVENT'%>
   <div class="content pt-2">
     <div class="container">
       <div class="row">
@@ -15,8 +15,24 @@
             <div class="title mt-2">
               <h4><%= @event.name%></h4>
             </div>
-            <div class="body">
+            <div class="body mt-2">
               <p><%= @event.description%></p>
+            </div>
+          </div>
+
+          <div class="event-invitees p-4">
+            <span><i class="icon-people pr-2"></i>Invitees</span><br>
+            <div class="d-flex">
+              <% if User.find(@event.invites.invited.map { |invite| invite.user_id }).any? %>
+              <% User.find(@event.invites.invited.map { |invite| invite.user_id }).each do |user| %>
+              <div class="profile d-flex px-3 py-1 mx-2">
+                <span class="mr-2"><i class="icon-user"></i></span>
+                <span><%= @event.creator['name']%></span>
+              </div>
+              <% end %>
+              <% else %>
+              <span class="mt-3">NONE</span>
+              <% end %>
             </div>
           </div>
         </div>
@@ -26,7 +42,15 @@
               <span><i class="icon-location-pin pr-2"></i><%= @event.location%></span>
               <span><i class="icon-calender pr-2"></i><%= @event.date%></span>
             </div>
-            <%= link_to "INVITE", some_path %>
+            <%- if current_user == @event.creator %>
+            <div class="d-flex justify-content-center mt-4">
+              <%= link_to "INVITE PEOPLE", invites_path, class: 'text-center invite-link px-5 py-2' %>
+            </div>
+            <% else %>
+            <div class="d-flex justify-content-center mt-4">
+              <%= link_to "JOIN EVENT", invite_path(event_id: @event.id), method: :patch, class: 'text-center invite-link px-5 py-2' %>
+            </div>
+            <% end %>
           </div>
         </div>
       </div>

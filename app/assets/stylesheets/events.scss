@@ -120,6 +120,7 @@
 
   .body {
     font-size: 15px;
+    line-height: 30px;
   }
 }
 
@@ -135,5 +136,30 @@
     i {
       color: rgb(255, 115, 0);
     }
+  }
+}
+
+.event-invitees {
+  border: 3px solid rgb(247, 241, 241);
+
+   span {
+    font-size: 15px;
+    font-weight: 700;
+    color: rgb(133, 133, 133);
+
+    i {
+      color: rgb(255, 115, 0);
+    }
+  }
+}
+
+.invite-link {
+  background-color: rgb(255, 115, 0);
+  color: white !important;
+
+  &:hover {
+    background-color: rgba(255, 115, 0, 0.89);
+    text-decoration: none;
+    color: white;
   }
 }

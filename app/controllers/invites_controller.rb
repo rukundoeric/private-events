@@ -41,6 +41,8 @@ class InvitesController < ApplicationController
     if invite&.invited
       invite.accepted!
       flash[:notice] = 'THANKS FOR ACCEPTING TO ANTEND THIS EVENT!'
+    else
+      flash[:alert] = 'SORRY, YOU ARE NOT INVITED TO THIS EVENT!'
     end
     redirect_to event_path(event)
   end

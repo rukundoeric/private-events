@@ -1,3 +1,16 @@
-<div class="container taskbar d-flex py-3">
-  <%= render 'shared/links'%>
+<%
+  if notice
+    taskbar_style = 'notice'
+  elsif alert
+    taskbar_style = 'error'
+  end
+%>
+<div class="<%= taskbar_style %>">
+  <div class="container taskbar d-flex py-3">
+    <%- if notice || alert %>
+    <span><%= notice || alert %></span>
+    <% else %>
+    <%= render 'shared/links', origin: origin%>
+    <% end %>
+  </div>
 </div>
