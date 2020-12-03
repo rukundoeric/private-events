@@ -24,8 +24,8 @@
             <div class="mt-1">
               <span><i class="icon-people pr-2"></i>Invitees</span><br>
               <div class="d-flex flex-wrap mt-2">
-                <% if User.find(@event.invites.invited.map { |invite| invite.user_id }).any? %>
-                <% User.find(@event.invites.invited.map { |invite| invite.user_id }).each do |user| %>
+                <% if @invitees.any? %>
+                <% @invitees.each do |user| %>
                 <div class="profile d-flex px-3 py-1 mx-2">
                   <span class="mr-2"><i class="icon-user"></i></span>
                   <%= link_to user.name, user_path(user) %>
@@ -39,8 +39,8 @@
             <div class="mt-3">
               <span><i class="icon-people pr-2"></i>Attendies</span><br>
               <div class="d-flex flex-wrap mt-2">
-                <% if User.find(@event.invites.accepted.map { |invite| invite.user_id }).any? %>
-                <% User.find(@event.invites.accepted.map { |invite| invite.user_id }).each do |user| %>
+                <% if @attendies.any? %>
+                <% @attendies.each do |user| %>
                 <div class="profile d-flex px-3 py-1 mx-2">
                   <span class="mr-2"><i class="icon-user"></i></span>
                   <%= link_to user.name, user_path(user) %>
@@ -65,7 +65,7 @@
             </div>
             <% else %>
 
-            <%- if current_user.invites.accepted.select{|obj| obj[:event_id] == @event.id}.any? %>
+            <%- if @is_attendy %>
             <div class="d-flex justify-content-center mt-4">
               <%= button_to "WITHDRAW", invite_path(event_id: @event.id), method: :patch, class: 'text-center button cancel px-5 py-2' %>
             </div>

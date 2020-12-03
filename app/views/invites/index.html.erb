@@ -5,10 +5,9 @@
     <div class="container">
       <h4>INVITE USERS</h4>
 
-
       <div class="row invite-list-content">
 
-        <% @users.reject { |user| user == Event.find(params[:event_id]).creator }.each do |user| %>
+        <% @users.each do |user| %>
         <% invite = Invite.find_by(event_id: params[:event_id], user_id: user.id) %>
         <div class="col-lg-6 invite-item d-flex justify-content-between px-3 py-3">
           <div class="d-flex">

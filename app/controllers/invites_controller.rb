@@ -2,7 +2,7 @@ class InvitesController < ApplicationController
   before_action :require_login, except: %i[index]
 
   def index
-    @users = User.all
+    @users = User.all.reject { |user| user == Event.find(params[:event_id]).creator }
   end
 
   def create

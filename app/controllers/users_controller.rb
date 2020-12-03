@@ -10,7 +10,11 @@ class UsersController < ApplicationController
 
   # GET /users/1
   # GET /users/1.json
-  def show; end
+  def show
+    @own = @user.events
+    @upcoming = @user.attended_events.select { |obj| obj[:date] >= Date.today }
+    @past = @user.attended_events.select { |obj| obj[:date] < Date.today }
+  end
 
   # GET /users/new
   def new

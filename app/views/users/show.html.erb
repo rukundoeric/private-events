@@ -15,10 +15,10 @@
 
   <div class="content">
     <div class="container show-user-profile pt-3">
-      <h4>HOSTED EVENTS</h4>
+      <h4>OWN EVENTS</h4>
       <div class="row post-list p-3">
-        <%- if @user.events.any? %>
-        <% @user.events.upcoming.each do |event| %>
+        <%- if  @own.any? %>
+        <%  @own.each do |event| %>
         <article class="col-xl-4 my-3">
           <div class="event-item p-3">
             <%= link_to  event.name, event_path(event), class: 'title-link' %>
@@ -38,24 +38,48 @@
     </div>
     <div class="container show-user-profile pt-3">
       <h4>ATTENDED EVENTS</h4>
-      <div class="row post-list p-3">
-        <%- if @user.attended_events.any? %>
-        <% @user.attended_events.each do |event| %>
-        <article class="col-xl-4 my-3">
-          <div class="event-item p-3">
-            <%= link_to  event.name, event_path(event), class: 'title-link' %>
-            <p class="body pt-2"><%= event.description %></p>
-            <div class="d-flex flex-column">
-              <span><i class="icon-location-pin pr-2"></i><%= event.location%></span>
-              <span><i class="icon-calender pr-2"></i><%= event.date%></span>
+      <div class="mt-2">
+        <span>UPCOMING EVENTS</span>
+        <div class="row post-list p-3">
+          <%- if @upcoming.any? %>
+          <% @upcoming.each do |event| %>
+          <article class="col-xl-4 my-3">
+            <div class="event-item p-3">
+              <%= link_to  event.name, event_path(event), class: 'title-link' %>
+              <p class="body pt-2"><%= event.description %></p>
+              <div class="d-flex flex-column">
+                <span><i class="icon-location-pin pr-2"></i><%= event.location%></span>
+                <span><i class="icon-calender pr-2"></i><%= event.date%></span>
+              </div>
             </div>
-          </div>
-        </article>
-        <% end %>
+          </article>
+          <% end %>
 
-        <% else %>
-        <span>NONE</span>
-        <% end %>
+          <% else %>
+          <span>NONE</span>
+          <% end %>
+        </div>
+
+        <span>PAST EVENTS</span>
+        <div class="row post-list p-3">
+          <%- if @past.any? %>
+          <% @past.each do |event| %>
+          <article class="col-xl-4 my-3">
+            <div class="event-item p-3">
+              <%= link_to  event.name, event_path(event), class: 'title-link' %>
+              <p class="body pt-2"><%= event.description %></p>
+              <div class="d-flex flex-column">
+                <span><i class="icon-location-pin pr-2"></i><%= event.location%></span>
+                <span><i class="icon-calender pr-2"></i><%= event.date%></span>
+              </div>
+            </div>
+          </article>
+          <% end %>
+
+          <% else %>
+          <span>NONE</span>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
