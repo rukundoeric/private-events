@@ -1,4 +1,4 @@
-# Members Only
+# Private Events
 In this project, we implemented a site similar to [Eventbrite](https://www.eventbrite.com/) which allows users to create events and then manage user signups.
 
 ## Built With
